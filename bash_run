@@ -8,12 +8,6 @@ then
 	sh com_lib
 fi
 
-if [[ -e "mult.sv" ]]
-then
-	echo "mult.sv found. Compiling"
-	vlog -novopt mult.sv
-fi
-
 if [[ -e "mult_ctl.sv" ]]
 then
 	echo "mult_ctl.sv found. Compiling"
@@ -24,6 +18,12 @@ if [[ -e "mult_syn" ]]
 then
 	echo "mult_syn found"
 	design_vision-xg -f mult_syn 
+fi
+
+if [[ -e "mult_bash" ]]
+then
+	echo "mult_bash found"
+	design_vision-xg -f mult_bash 
 fi
 
 #"do_mult.do"
